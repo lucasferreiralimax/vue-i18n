@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Миграция с версии v5.x | Vue I18n</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    
+    <meta name="description" content="Vue I18n — плагин для интернационализации во Vue.js">
+    <meta name="theme-color" content="#3eaf7c">
+    <link rel="preload" href="/vue-i18n/assets/css/0.styles.489e3707.css" as="style"><link rel="preload" href="/vue-i18n/assets/js/app.d933212a.js" as="script"><link rel="preload" href="/vue-i18n/assets/js/2.6f5355ad.js" as="script"><link rel="preload" href="/vue-i18n/assets/js/44.beeee051.js" as="script"><link rel="prefetch" href="/vue-i18n/assets/js/10.926c0c6a.js"><link rel="prefetch" href="/vue-i18n/assets/js/11.c9099412.js"><link rel="prefetch" href="/vue-i18n/assets/js/12.4f696f1b.js"><link rel="prefetch" href="/vue-i18n/assets/js/13.9bdcf79e.js"><link rel="prefetch" href="/vue-i18n/assets/js/14.26d3f192.js"><link rel="prefetch" href="/vue-i18n/assets/js/15.ab3e55b9.js"><link rel="prefetch" href="/vue-i18n/assets/js/16.3c747031.js"><link rel="prefetch" href="/vue-i18n/assets/js/17.c41ad80b.js"><link rel="prefetch" href="/vue-i18n/assets/js/18.86257e60.js"><link rel="prefetch" href="/vue-i18n/assets/js/19.cfd018c7.js"><link rel="prefetch" href="/vue-i18n/assets/js/20.ae2f15c4.js"><link rel="prefetch" href="/vue-i18n/assets/js/21.68291f24.js"><link rel="prefetch" href="/vue-i18n/assets/js/22.01371dda.js"><link rel="prefetch" href="/vue-i18n/assets/js/23.969cf4e0.js"><link rel="prefetch" href="/vue-i18n/assets/js/24.e2d29042.js"><link rel="prefetch" href="/vue-i18n/assets/js/25.4a0a49a1.js"><link rel="prefetch" href="/vue-i18n/assets/js/26.546c5959.js"><link rel="prefetch" href="/vue-i18n/assets/js/27.014997e4.js"><link rel="prefetch" href="/vue-i18n/assets/js/28.b15ff9b8.js"><link rel="prefetch" href="/vue-i18n/assets/js/29.8a6d7e6f.js"><link rel="prefetch" href="/vue-i18n/assets/js/3.5c3f21b2.js"><link rel="prefetch" href="/vue-i18n/assets/js/30.48d85ef1.js"><link rel="prefetch" href="/vue-i18n/assets/js/31.44fc8067.js"><link rel="prefetch" href="/vue-i18n/assets/js/32.44e5e9eb.js"><link rel="prefetch" href="/vue-i18n/assets/js/33.093f8ba2.js"><link rel="prefetch" href="/vue-i18n/assets/js/34.c07ae1f9.js"><link rel="prefetch" href="/vue-i18n/assets/js/35.b74df107.js"><link rel="prefetch" href="/vue-i18n/assets/js/36.3ea7bb5d.js"><link rel="prefetch" href="/vue-i18n/assets/js/37.2732bbc0.js"><link rel="prefetch" href="/vue-i18n/assets/js/38.421b97b5.js"><link rel="prefetch" href="/vue-i18n/assets/js/39.ed15106a.js"><link rel="prefetch" href="/vue-i18n/assets/js/4.0f7ad733.js"><link rel="prefetch" href="/vue-i18n/assets/js/40.1f7bb134.js"><link rel="prefetch" href="/vue-i18n/assets/js/41.6dbc00a7.js"><link rel="prefetch" href="/vue-i18n/assets/js/42.c7dc9c4b.js"><link rel="prefetch" href="/vue-i18n/assets/js/43.2fdaa1f1.js"><link rel="prefetch" href="/vue-i18n/assets/js/45.e4b65e00.js"><link rel="prefetch" href="/vue-i18n/assets/js/46.c1c9f31d.js"><link rel="prefetch" href="/vue-i18n/assets/js/47.e41a9633.js"><link rel="prefetch" href="/vue-i18n/assets/js/48.7b44a51f.js"><link rel="prefetch" href="/vue-i18n/assets/js/49.1f37f7c3.js"><link rel="prefetch" href="/vue-i18n/assets/js/5.2751883a.js"><link rel="prefetch" href="/vue-i18n/assets/js/50.827b3cee.js"><link rel="prefetch" href="/vue-i18n/assets/js/51.e144a225.js"><link rel="prefetch" href="/vue-i18n/assets/js/52.f579bfa3.js"><link rel="prefetch" href="/vue-i18n/assets/js/53.d42ffb8a.js"><link rel="prefetch" href="/vue-i18n/assets/js/54.470da8f9.js"><link rel="prefetch" href="/vue-i18n/assets/js/55.9d85d35a.js"><link rel="prefetch" href="/vue-i18n/assets/js/56.87dc8d75.js"><link rel="prefetch" href="/vue-i18n/assets/js/57.8c30c91e.js"><link rel="prefetch" href="/vue-i18n/assets/js/58.5c1cce29.js"><link rel="prefetch" href="/vue-i18n/assets/js/59.b4e71110.js"><link rel="prefetch" href="/vue-i18n/assets/js/6.4f0cd884.js"><link rel="prefetch" href="/vue-i18n/assets/js/60.a3525b49.js"><link rel="prefetch" href="/vue-i18n/assets/js/61.dff2ec96.js"><link rel="prefetch" href="/vue-i18n/assets/js/62.fae7f714.js"><link rel="prefetch" href="/vue-i18n/assets/js/63.dfa30aaa.js"><link rel="prefetch" href="/vue-i18n/assets/js/64.17e773cb.js"><link rel="prefetch" href="/vue-i18n/assets/js/65.4edaba9d.js"><link rel="prefetch" href="/vue-i18n/assets/js/66.84aeefde.js"><link rel="prefetch" href="/vue-i18n/assets/js/67.b59d5c89.js"><link rel="prefetch" href="/vue-i18n/assets/js/68.d60ec427.js"><link rel="prefetch" href="/vue-i18n/assets/js/7.9933677d.js"><link rel="prefetch" href="/vue-i18n/assets/js/8.93deb08a.js"><link rel="prefetch" href="/vue-i18n/assets/js/9.46326beb.js">
+    <link rel="stylesheet" href="/vue-i18n/assets/css/0.styles.489e3707.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vue-i18n/ru/" class="home-link router-link-active"><!----> <span class="site-name">Vue I18n</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vue-i18n/ru/guide/formatting.html" class="nav-link">
+  Руководство
+</a></div><div class="nav-item"><a href="/vue-i18n/ru/api/" class="nav-link">
+  Справочник API
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Экосистема" class="dropdown-title"><span class="title">Экосистема</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Оф. инструментарий
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/kazupon/vue-cli-plugin-i18n" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Плагин для Vue CLI
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/kazupon/vue-i18n-loader" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Загрузчик Webpack
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://intlify.github.io/eslint-plugin-vue-i18n/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Плагин для ESLint
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/kazupon/vue-i18n-extensions" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Расширения
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li><li class="dropdown-item"><h4>
+          Сторонние разработки
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.codeandweb.com/babeledit?utm_campaign=vue-i18n-2019-01" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  BabelEdit
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://marketplace.visualstudio.com/items?itemName=antfu.i18n-ally" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  i18n Ally
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://www.patreon.com/kazupon" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Patreon
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/kazupon/vue-i18n/releases" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  История изменений
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Переводы</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue-i18n/legacy/" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/vue-i18n/zh/legacy/" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/vue-i18n/ru/legacy/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Русский
+</a></li></ul></div></div> <a href="https://github.com/kazupon/vue-i18n" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vue-i18n/ru/guide/formatting.html" class="nav-link">
+  Руководство
+</a></div><div class="nav-item"><a href="/vue-i18n/ru/api/" class="nav-link">
+  Справочник API
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Экосистема" class="dropdown-title"><span class="title">Экосистема</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Оф. инструментарий
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://github.com/kazupon/vue-cli-plugin-i18n" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Плагин для Vue CLI
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/kazupon/vue-i18n-loader" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Загрузчик Webpack
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://intlify.github.io/eslint-plugin-vue-i18n/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Плагин для ESLint
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/kazupon/vue-i18n-extensions" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Расширения
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li><li class="dropdown-item"><h4>
+          Сторонние разработки
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.codeandweb.com/babeledit?utm_campaign=vue-i18n-2019-01" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  BabelEdit
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://marketplace.visualstudio.com/items?itemName=antfu.i18n-ally" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  i18n Ally
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://www.patreon.com/kazupon" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Patreon
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/kazupon/vue-i18n/releases" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  История изменений
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Переводы</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue-i18n/legacy/" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/vue-i18n/zh/legacy/" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/vue-i18n/ru/legacy/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Русский
+</a></li></ul></div></div> <a href="https://github.com/kazupon/vue-i18n" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/vue-i18n/ru/introduction.html" class="sidebar-link">Введение</a></li><li><a href="/vue-i18n/ru/started.html" class="sidebar-link">Начало работы</a></li><li><a href="/vue-i18n/ru/installation.html" class="sidebar-link">Установка</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Руководство</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vue-i18n/ru/guide/formatting.html" class="sidebar-link">Формат сообщений локализации</a></li><li><a href="/vue-i18n/ru/guide/pluralization.html" class="sidebar-link">Плюрализация</a></li><li><a href="/vue-i18n/ru/guide/datetime.html" class="sidebar-link">Локализация дат</a></li><li><a href="/vue-i18n/ru/guide/number.html" class="sidebar-link">Локализация чисел</a></li><li><a href="/vue-i18n/ru/guide/messages.html" class="sidebar-link">Синтаксис сообщений локализации</a></li><li><a href="/vue-i18n/ru/guide/fallback.html" class="sidebar-link">Запасная локализация</a></li><li><a href="/vue-i18n/ru/guide/component.html" class="sidebar-link">Локализация на основе компонентов</a></li><li><a href="/vue-i18n/ru/guide/directive.html" class="sidebar-link">Пользовательская директива</a></li><li><a href="/vue-i18n/ru/guide/interpolation.html" class="sidebar-link">Интерполяция компонента</a></li><li><a href="/vue-i18n/ru/guide/sfc.html" class="sidebar-link">Однофайловые компоненты</a></li><li><a href="/vue-i18n/ru/guide/hot-reload.html" class="sidebar-link">Горячая перезагрузка переводов</a></li><li><a href="/vue-i18n/ru/guide/locale.html" class="sidebar-link">Переключение локализации</a></li><li><a href="/vue-i18n/ru/guide/lazy-loading.html" class="sidebar-link">Ленивая загрузка переводов</a></li><li><a href="/vue-i18n/ru/guide/tooling.html" class="sidebar-link">Инструментарий</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Устаревшие версии</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vue-i18n/ru/legacy/" aria-current="page" class="active sidebar-link">Миграция с версии v5.x</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#гnобаnьная-конфигурация" class="sidebar-link">Глобальная конфигурация</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#заменён-lang" class="sidebar-link">Заменён lang</a></li><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#заменён-fallbacklang" class="sidebar-link">Заменён fallbackLang</a></li><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#заменён-missinghandler" class="sidebar-link">Заменён missingHandler</a></li><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#заменён-i18nformatter" class="sidebar-link">Заменён i18nFormatter</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#гnобаnьные-методы" class="sidebar-link">Глобальные методы</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#заменён-vue-locale" class="sidebar-link">Заменён Vue.locale</a></li><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#заменён-vue-t" class="sidebar-link">Заменён Vue.t</a></li><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#заменён-vue-tc" class="sidebar-link">Заменён Vue.tc</a></li><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#заменён-vue-te" class="sidebar-link">Заменён Vue.te</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#опции-конструктора" class="sidebar-link">Опции конструктора</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#заменён-locales" class="sidebar-link">Заменён locales</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#свойства-экземпnяра" class="sidebar-link">Свойства экземпляра</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#заменён-lang-2" class="sidebar-link">Заменён \$lang</a></li></ul></li><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#другие-возможности" class="sidebar-link">Другие возможности</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue-i18n/ru/legacy/#динамическая-nокаnизация-удаnена" class="sidebar-link">Динамическая локализация удалена</a></li></ul></li></ul></li><li><a href="/vue-i18n/ru/legacy/v5.html" class="sidebar-link">Документация для версии v5.x</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="миграция-с-версии-v5-x"><a href="#миграция-с-версии-v5-x" class="header-anchor">#</a> Миграция с версии v5.x</h1> <h2 id="гnобаnьная-конфигурация"><a href="#гnобаnьная-конфигурация" class="header-anchor">#</a> Глобальная конфигурация</h2> <h3 id="заменён-lang"><a href="#заменён-lang" class="header-anchor">#</a> Заменён lang</h3> <p>Используйте у конструктора класса <code>VueI18n</code> опцию <code>locale</code> или свойство <code>VueI18n#locale</code>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  locale<span class="token operator">:</span> <span class="token string">'en'</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span> i18n <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// переключение локализации</span>
+i18n<span class="token punctuation">.</span>locale <span class="token operator">=</span> <span class="token string">'ru'</span>
+<span class="token comment">// или</span>
+app<span class="token punctuation">.</span>$i18n<span class="token punctuation">.</span>locale <span class="token operator">=</span> <span class="token string">'ru'</span>
+</code></pre></div><h3 id="заменён-fallbacklang"><a href="#заменён-fallbacklang" class="header-anchor">#</a> Заменён fallbackLang</h3> <p>Используйте у конструктора класса <code>VueI18n</code> опцию <code>fallbackLocale</code> или свойство
+<code>VueI18n#fallbackLocale</code>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  locale<span class="token operator">:</span> <span class="token string">'ru'</span><span class="token punctuation">,</span>
+  fallbackLocale<span class="token operator">:</span> <span class="token string">'en'</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span> i18n <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// изменение запасной локализации</span>
+i18n<span class="token punctuation">.</span>fallbackLocale <span class="token operator">=</span> <span class="token string">'zh'</span>
+<span class="token comment">// или</span>
+app<span class="token punctuation">.</span>$i18n<span class="token punctuation">.</span>fallbackLocale <span class="token operator">=</span> <span class="token string">'zh'</span>
+</code></pre></div><h3 id="заменён-missinghandler"><a href="#заменён-missinghandler" class="header-anchor">#</a> Заменён missingHandler</h3> <p>Используйте у конструктора класса <code>VueI18n</code> опцию <code>missing</code> или свойство <code>VueI18n#missing</code>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  <span class="token function-variable function">missing</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">locale<span class="token punctuation">,</span> key<span class="token punctuation">,</span> vm<span class="token punctuation">,</span> values</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// обработка отсутствующих переводов</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span> i18n <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// изменение обработчика для отсутствующих переводов</span>
+i18n<span class="token punctuation">.</span><span class="token function-variable function">missing</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">locale<span class="token punctuation">,</span> key<span class="token punctuation">,</span> vm<span class="token punctuation">,</span> values</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// обработка отсутствующих переводов</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// или</span>
+app<span class="token punctuation">.</span>$i18n<span class="token punctuation">.</span><span class="token function-variable function">missing</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">locale<span class="token punctuation">,</span> key<span class="token punctuation">,</span> vm<span class="token punctuation">,</span> values</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// обработка отсутствующих переводов</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="заменён-i18nformatter"><a href="#заменён-i18nformatter" class="header-anchor">#</a> Заменён i18nFormatter</h3> <p>Используйте у конструктора класса <code>VueI18n</code> опцию <code>formatter</code> или свойство <code>VueI18n#formatter</code>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">CustomFormatter</span> <span class="token punctuation">{</span>
+  <span class="token function">format</span><span class="token punctuation">(</span><span class="token parameter">message<span class="token punctuation">,</span> <span class="token operator">...</span>values</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// какая-то логика</span>
+    <span class="token keyword">return</span> <span class="token string">'something string'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  formatter<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">CustomFormatter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span> i18n <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// изменение пользовательского форматтера</span>
+i18n<span class="token punctuation">.</span>formatter <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">format</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">message<span class="token punctuation">,</span> <span class="token operator">...</span>values</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// какая-то логика</span>
+    <span class="token keyword">return</span> <span class="token string">'something string'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// или</span>
+app<span class="token punctuation">.</span>$i18n<span class="token punctuation">.</span>formatter <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">format</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">message<span class="token punctuation">,</span> <span class="token operator">...</span>values</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// какая-то логика</span>
+    <span class="token keyword">return</span> <span class="token string">'something string'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="гnобаnьные-методы"><a href="#гnобаnьные-методы" class="header-anchor">#</a> Глобальные методы</h2> <h3 id="заменён-vue-locale"><a href="#заменён-vue-locale" class="header-anchor">#</a> Заменён Vue.locale</h3> <p>Используйте у конструктора класса <code>VueI18n</code> опцию <code>messages</code> или методы <code>VueI18n#GetLocaleMessage</code> / <code>VueI18n#setLocaleMessage</code>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  messages<span class="token operator">:</span> <span class="token punctuation">{</span>
+    en<span class="token operator">:</span> <span class="token punctuation">{</span>
+      hello<span class="token operator">:</span> <span class="token string">'hello world'</span>
+      <span class="token comment">// ...</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    ru<span class="token operator">:</span> <span class="token punctuation">{</span>
+      hello<span class="token operator">:</span> <span class="token string">'привет мир'</span>
+      <span class="token comment">// ...</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span> i18n <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// получение сообщений локализации</span>
+<span class="token keyword">const</span> en <span class="token operator">=</span> i18n<span class="token punctuation">.</span><span class="token function">getLocaleMessage</span><span class="token punctuation">(</span><span class="token string">'en'</span><span class="token punctuation">)</span>
+en<span class="token punctuation">.</span>greeting <span class="token operator">=</span> <span class="token string">'hi!'</span>
+<span class="token comment">// установка сообщений локализации</span>
+i18n<span class="token punctuation">.</span><span class="token function">setLocaleMessage</span><span class="token punctuation">(</span><span class="token string">'en'</span><span class="token punctuation">,</span> en<span class="token punctuation">)</span>
+<span class="token comment">// или</span>
+<span class="token keyword">const</span> ru <span class="token operator">=</span> app<span class="token punctuation">.</span>$i18n<span class="token punctuation">.</span><span class="token function">getLocaleMessage</span><span class="token punctuation">(</span><span class="token string">'ru'</span><span class="token punctuation">)</span>
+ru<span class="token punctuation">.</span>greeting <span class="token operator">=</span> <span class="token string">'Привет!'</span>
+app<span class="token punctuation">.</span>$i18n<span class="token punctuation">.</span><span class="token function">setLocaleMessage</span><span class="token punctuation">(</span><span class="token string">'ru'</span><span class="token punctuation">,</span> ru<span class="token punctuation">)</span>
+</code></pre></div><h3 id="заменён-vue-t"><a href="#заменён-vue-t" class="header-anchor">#</a> Заменён Vue.t</h3> <p>Используйте метод <code>VueI18n#t</code>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  locale<span class="token operator">:</span> <span class="token string">'en'</span><span class="token punctuation">,</span>
+  messages<span class="token operator">:</span> <span class="token punctuation">{</span>
+    en<span class="token operator">:</span> <span class="token punctuation">{</span>
+      greeting<span class="token operator">:</span> <span class="token string">'hi {name}'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+i18n<span class="token punctuation">.</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'greeting'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'kazupon'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; hi kazupon</span>
+</code></pre></div><h3 id="заменён-vue-tc"><a href="#заменён-vue-tc" class="header-anchor">#</a> Заменён Vue.tc</h3> <p>Используйте метод <code>VueI18n#tc</code>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  locale<span class="token operator">:</span> <span class="token string">'en'</span><span class="token punctuation">,</span>
+  messages<span class="token operator">:</span> <span class="token punctuation">{</span>
+    en<span class="token operator">:</span> <span class="token punctuation">{</span>
+      apple<span class="token operator">:</span> <span class="token string">'no apples | one apple | {count} apples'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> count <span class="token operator">=</span> <span class="token number">10</span>
+i18n<span class="token punctuation">.</span><span class="token function">tc</span><span class="token punctuation">(</span><span class="token string">'apple'</span><span class="token punctuation">,</span> count<span class="token punctuation">,</span> <span class="token punctuation">{</span> count <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; 10 apples</span>
+</code></pre></div><h3 id="заменён-vue-te"><a href="#заменён-vue-te" class="header-anchor">#</a> Заменён Vue.te</h3> <p>Используйте метод <code>VueI18n#te</code>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  locale<span class="token operator">:</span> <span class="token string">'en'</span><span class="token punctuation">,</span>
+  messages<span class="token operator">:</span> <span class="token punctuation">{</span>
+    en<span class="token operator">:</span> <span class="token punctuation">{</span>
+      hello<span class="token operator">:</span> <span class="token string">'hello world'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+i18n<span class="token punctuation">.</span><span class="token function">te</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; true</span>
+i18n<span class="token punctuation">.</span><span class="token function">te</span><span class="token punctuation">(</span><span class="token string">'hallo'</span><span class="token punctuation">,</span> <span class="token string">'ru'</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; false</span>
+i18n<span class="token punctuation">.</span><span class="token function">te</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; true</span>
+</code></pre></div><h2 id="опции-конструктора"><a href="#опции-конструктора" class="header-anchor">#</a> Опции конструктора</h2> <h3 id="заменён-locales"><a href="#заменён-locales" class="header-anchor">#</a> Заменён locales</h3> <p>Используйте у конструктора класса <code>VueI18n</code> опцию <code>messages</code> или <code>messages</code> из <code>i18n</code> (для компонента):</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  locale<span class="token operator">:</span> <span class="token string">'en'</span><span class="token punctuation">,</span>
+  messages<span class="token operator">:</span> <span class="token punctuation">{</span>
+    en<span class="token operator">:</span> <span class="token punctuation">{</span>
+      greeting<span class="token operator">:</span> <span class="token string">'hi {name}'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// для компонента</span>
+<span class="token keyword">const</span> Component1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  i18n<span class="token operator">:</span> <span class="token punctuation">{</span>
+    messages<span class="token operator">:</span> <span class="token punctuation">{</span>
+      en<span class="token operator">:</span> <span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">'Title1'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="свойства-экземпnяра"><a href="#свойства-экземпnяра" class="header-anchor">#</a> Свойства экземпляра</h2> <h3 id="заменён-lang-2"><a href="#заменён-lang-2" class="header-anchor">#</a> Заменён $lang</h3> <p>Используйте свойство <code>VueI18n#locale</code>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  locale<span class="token operator">:</span> <span class="token string">'en'</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span> i18n <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// переключение локализации</span>
+i18n<span class="token punctuation">.</span>locale <span class="token operator">=</span> <span class="token string">'ru'</span>
+<span class="token comment">// или</span>
+app<span class="token punctuation">.</span>$i18n<span class="token punctuation">.</span>locale <span class="token operator">=</span> <span class="token string">'ru'</span>
+</code></pre></div><h2 id="другие-возможности"><a href="#другие-возможности" class="header-anchor">#</a> Другие возможности</h2> <h3 id="динамическая-nокаnизация-удаnена"><a href="#динамическая-nокаnизация-удаnена" class="header-anchor">#</a> Динамическая локализация удалена</h3> <p>При необходимости динамически устанавливать сообщения локализации потребуется добавить реализацию самостоятельно:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">{</span> locale<span class="token operator">:</span> <span class="token string">'en'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  i18n<span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span> loading<span class="token operator">:</span> <span class="token string">''</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">loadLocaleMessage</span><span class="token punctuation">(</span><span class="token parameter">locale<span class="token punctuation">,</span> cb</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'/locales/'</span> <span class="token operator">+</span> locale<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    method<span class="token operator">:</span> <span class="token string">'get'</span><span class="token punctuation">,</span>
+    headers<span class="token operator">:</span> <span class="token punctuation">{</span>
+      Accept<span class="token operator">:</span> <span class="token string">'application/json'</span><span class="token punctuation">,</span>
+      <span class="token string">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'application/json'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">json</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'locale empty !!'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">message</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">cb</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">error</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">cb</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+app<span class="token punctuation">.</span>loading <span class="token operator">=</span> <span class="token string">'loading ...'</span>
+<span class="token function">loadLocaleMessage</span><span class="token punctuation">(</span><span class="token string">'en'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> message</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    app<span class="token punctuation">.</span>loading <span class="token operator">=</span> <span class="token string">''</span>
+    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token keyword">return</span>
+  <span class="token punctuation">}</span>
+  i18n<span class="token punctuation">.</span><span class="token function">setLocaleMessage</span><span class="token punctuation">(</span><span class="token string">'en'</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span>
+  app<span class="token punctuation">.</span>loading <span class="token operator">=</span> <span class="token string">''</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/kazupon/vue-i18n/edit/master/vuepress/ru/legacy/README.md" target="_blank" rel="noopener noreferrer">Изменить эту страницу на GitHub</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Последнее обновление:</span> <span class="time">07.05.2020, 10:46:10</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vue-i18n/ru/guide/tooling.html" class="prev">
+        Инструментарий
+      </a></span> <span class="next"><a href="/vue-i18n/ru/legacy/v5.html">
+        Документация для версии v5.x
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vue-i18n/assets/js/app.d933212a.js" defer></script><script src="/vue-i18n/assets/js/2.6f5355ad.js" defer></script><script src="/vue-i18n/assets/js/44.beeee051.js" defer></script>
+  </body>
+</html>
