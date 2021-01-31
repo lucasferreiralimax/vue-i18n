@@ -4,14 +4,23 @@ You can join them in supporting vue-i18n development by [pledging on Patreon](ht
 
 <h2 align="center">Gold Sponsors</h2>
 
-[Currently vacant. It could be you!](https://www.patreon.com/bePatron?c=1597144&patAmt=500.0)
+<p align="center">
+  <a href="https://nuxtjs.org/" target="_blank">
+    <img
+      src="https://raw.githubusercontent.com/kazupon/vue-i18n/v8.x/vuepress/.vuepress/public/patrons/nuxt.png"
+      width="400px"
+    />
+  </a>
+</p>
+
+[It could be you!](https://www.patreon.com/bePatron?c=1597144&patAmt=500.0)
 
 <h2 align="center">Sliver Sponsors</h2>
 
 <p align="center">
   <a href="https://www.codeandweb.com/babeledit?utm_campaign=vue-i18n-2019-01" target="_blank">
     <img
-      src="https://raw.githubusercontent.com/kazupon/vue-i18n/dev/vuepress/.vuepress/public/patrons/babeledit.png"
+      src="https://raw.githubusercontent.com/kazupon/vue-i18n/v8.x/vuepress/.vuepress/public/patrons/babeledit.png"
       width="320px"
     />
   </a>
@@ -33,6 +42,14 @@ You can join them in supporting vue-i18n development by [pledging on Patreon](ht
   <a href="https://www.sendcloud.com/" target="_blank">
     <img
       src="https://raw.githubusercontent.com/kazupon/vue-i18n/v8.x/vuepress/.vuepress/public/patrons/sendcloud.png"
+      width="200px"
+    />
+  </a>
+</p>
+<p align="center">
+  <a href="https://www.vuemastery.com/" target="_blank">
+    <img
+      src="https://raw.githubusercontent.com/kazupon/vue-i18n/v8.x/vuepress/.vuepress/public/patrons/vuemastery.png"
       width="200px"
     />
   </a>
